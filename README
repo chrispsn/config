@@ -1,5 +1,7 @@
 Installation:
 
+    First, set up ssh using http://help.github.com/linux-set-up-git/
+
     cd ~/
     git init
     git pull git@github.com:chrispsn/config.git
