@@ -7,6 +7,12 @@ Installation:
     git pull git@github.com:chrispsn/config.git
     git remote add origin git@github.com:chrispsn/config.git
 
+    Then go into /.git/config and add these lines:
+
+    [branch "master"]
+    remote = origin
+    merge = refs/heads/master
+
 Adding stuff:
 
     git add .
