@@ -7,15 +7,8 @@
     cd ~/
     git clone git@github.com:chrispsn/config.git
 
-# Adding stuff:
-
-    git add .
-    git commit -m "description"
-    git push
-
-# Getting latest version:
-
-    git pull
+    # Then create symbolic links to the files...
+    ln -s <path to original> <path to new>
 
 # Submodules:
 
