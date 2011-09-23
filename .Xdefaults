@@ -1,0 +1,48 @@
+urxvt*title: urxvt
+urxvt*termName: rxvt-256color
+
+URxvt*scrollBar:         false
+URxvt*secondaryscroll:   true
+URxvt*matcher.button:    1
+URxvt*cursorBlink:       true
+!URxvt*cursorUnderline:   true
+URxvt*cursorColor:       #868887
+URxvt*colorBD:           #b4927d
+!URxvt*colorUL:          #57956b
+URxvt*internalBorder:    3
+
+!!! FONTS
+urxvt*font: xft:Tamsyn:pixelsize=17:style=Regular
+urxvt*boldFont: xft:Tamsyn:pixelsize=17:style=Bold
+
+!!! COLOURS
+urxvt*background:           #333333
+urxvt*foreground:           #CCCCCC
+urxvt*cursorColor:          #999999
+urxvt*colorBD:              #FFFFFF
+urxvt*colorUL:              #CCCCFF
+
+!BLACK
+urxvt*color0:               #666666
+urxvt*color8:               #999999
+!RED
+urxvt*color1:               #CC6666
+urxvt*color9:               #FF9999
+!GREEN
+urxvt*color2:               #66cc99
+urxvt*color10:              #99FFCC
+!YELLOW
+urxvt*color3:               #CC9966
+urxvt*color11:              #FFCC99
+!BLUE
+urxvt*color4:               #6699CC
+urxvt*color12:              #99CCFF
+!MAGENTA
+urxvt*color5:               #CC6699
+urxvt*color13:              #FF99CC
+!CYAN
+urxvt*color6:               #66CCCC
+urxvt*color14:              #99FFFF
+!WHITE
+urxvt*color7:               #CCCCCC
+urxvt*color15:              #FFFFFF
