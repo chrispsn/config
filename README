@@ -5,7 +5,6 @@
 
     # Then, get the files...
     cd ~/
-    git init
     git clone git@github.com:chrispsn/config.git
 
 # Adding stuff:
