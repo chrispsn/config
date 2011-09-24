@@ -4,6 +4,7 @@
 [submodule ".vim/bundle/AutoComplPop"]
 	path = .vim/bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
+    ignore = dirty
 [submodule ".vim/bundle/pydoc"]
 	path = .vim/bundle/pydoc
 	url = git://github.com/fs111/pydoc.vim.git
@@ -22,6 +23,7 @@
 [submodule ".vim/bundle/NERDTree"]
 	path = .vim/bundle/NERDTree
 	url = git://github.com/vim-scripts/The-NERD-tree.git
+    ignore = dirty
 [submodule ".vim/bundle/CSApprox"]
 	path = .vim/bundle/CSApprox
 	url = git://github.com/godlygeek/csapprox.git
