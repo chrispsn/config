@@ -1,0 +1,33 @@
+Note: can also create a .gvimrc for gvim config settings; symlink similarly
+
+Installation: Create symlinks:
+    
+    ln -s ~/config/.vim ~/.vim
+    ln -s ~/config/.vimrc ~/.vimrc
+
+Adding non-plugin stuff: (in .vim directory)
+
+    git add .
+    git commit -m "description"
+    git push
+
+Getting latest version: (in .vim directory)
+
+    git pull
+
+Adding plugins:
+
+    git submodule add <address of plugin on github> ~/config/.vim/bundle/<plugin name>
+    then steps below this
+
+Pulling plugins: (in .vim directory)
+
+    git submodule init
+    git submodule update
+
+    or, try git submodule foreach git pull
+
+Getting rid of plugins:
+
+    http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
+    git rm --cached <path of plugin>, e.g. bundle<plugin name>
