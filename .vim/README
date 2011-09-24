@@ -7,7 +7,7 @@ Installation: Create symlinks:
 
 Adding non-plugin stuff: (in .vim directory)
 
-    git add .
+    git add <directory or file path>
     git commit -m "description"
     git push
 
@@ -18,14 +18,14 @@ Getting latest version: (in .vim directory)
 Adding plugins:
 
     git submodule add <address of plugin on github> ~/config/.vim/bundle/<plugin name>
-    then steps below this
-
-Pulling plugins: (in .vim directory)
-
     git submodule init
+
+Updating plugins: (in .vim directory)
+
     git submodule update
 
-    or, try git submodule foreach git pull
+    or, try:
+    git submodule foreach git pull origin master
 
 Getting rid of plugins:
 
