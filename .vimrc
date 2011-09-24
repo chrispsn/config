@@ -1,5 +1,5 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 set t_Co=256
 
