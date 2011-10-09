@@ -4,15 +4,16 @@ call pathogen#helptags()
 
 set t_Co=256
 
-" autocompletion
+" Autocompletion
 " filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 set completeopt=menuone,longest,preview
+set wildmode=list:longest,full " A test
 
-" syntax highlighting
+" Syntax highlighting
 syntax on
 let python_highlight_all=1
 colorscheme wombat
@@ -21,19 +22,31 @@ colorscheme wombat
 " enable css color highlighting for scss files
 au BufRead,BufNewFile *.scss set filetype=css
 
-" filetype indent on
+" Search highlighting (toggle with F8) (experimental)
+map <F8> :set hls!<CR>
+imap <F8> <ESC>:set hls!<CR>a
+vmap <F8> <ESC>:set hls!<CR>gv
+
+" Make GVim minimal (experimental)
+set guioptions-=T
+set guioptions-=m
+set guioptions-=L
+
+" Filetype indent on
 set autoindent
 set smartindent
 " set foldmethod=indent
 
+" Tabs converted to spaces, etc
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
 
+" Line numbers
 set number
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR> " Turns off line numbers
 
 " Line highlighting
 set cursorline
@@ -42,6 +55,7 @@ set cursorcolumn
 "let g:indent_guides_enable_on_vim_startup = 1 
 "let g:indent_guides_guide_size = 1
 
+" Bad whitespace highlighting
 highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
@@ -71,3 +85,4 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 " Custom bindings
 nmap <silent> <C-D> :NERDTreeToggle<CR>
+map <Leader><Leader> <C-^> "Switches to alternate file

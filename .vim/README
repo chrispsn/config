@@ -31,3 +31,8 @@ Getting rid of plugins:
 
     http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
     git rm --cached <path of plugin>, e.g. bundle<plugin name>
+
+Other problems:
+
+    Random appearance of untracked content in submodules:
+    http://www.nils-haldenwang.de/frameworks-and-tools/git/how-to-ignore-changes-in-git-submodules
