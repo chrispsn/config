@@ -18,6 +18,9 @@ let python_highlight_all=1
 colorscheme wombat
 " also excellent: candyman
 
+" enable css color highlighting for scss files
+au BufRead,BufNewFile *.scss set filetype=css
+
 " filetype indent on
 set autoindent
 set smartindent

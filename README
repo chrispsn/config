@@ -10,6 +10,10 @@
     # Then create symbolic links to the files...
     ln -s <path to original> <path to new>
 
+    # Finally, initialise and update the submodules...
+    git submodule init
+    git submodule update
+
 # Submodules:
 
     # http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
