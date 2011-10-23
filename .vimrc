@@ -28,9 +28,9 @@ imap <F8> <ESC>:set hls!<CR>a
 vmap <F8> <ESC>:set hls!<CR>gv
 
 " Make GVim minimal (experimental)
-set guioptions-=T
-set guioptions-=m
-set guioptions-=L
+"set guioptions-=T
+"set guioptions-=m
+"set guioptions-=L
 
 " Filetype indent on
 set autoindent

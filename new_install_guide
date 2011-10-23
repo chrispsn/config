@@ -1,42 +1,52 @@
-# ESSENTIALS
+### ESSENTIALS
 
-Install VBoxGuestAdditions
+## Utilities
 
-# Utilities
-
+# Install VBoxGuestAdditions
 sudo apt-get install vim-gnome #gvim
 sudo apt-get install nautilus-open-terminal # for ubuntu
 
-# Themes
+# Python stuff
+sudo apt-get install python-pip
+sudo pip install virtualenv
 
-In synaptic...
+# Chrome
+sudo apt-get install google-chrome
 
-gnome-themes --> mint, etc
+## Themes
 
-shiki-colors
+# In synaptic...
+
+# gnome-themes --> mint, etc
+# shiki-colors
 
 # this might not be necessary given shiki-colors
 sudo apt-get install gnome-colors
 # http://code.google.com/p/gnome-colors/
 
 #FreshDark
-http://hcalves.deviantart.com/art/Fresh-Dark-Gnome-Theme-2-1-95737856
+# http://hcalves.deviantart.com/art/Fresh-Dark-Gnome-Theme-2-1-95737856
 # (put the unpacked directory in ~/.themes)
-#also, you'll need this...
+#also, you'll need this for stop error messages in the appearance box
 sudo apt-get install gtk2-engines-aurora
 
 
 ### SERVERS
 
-# Git
+## Git/SSH
 
 sudo apt-get install git
 
-set up ssh to github
-http://help.github.com/linux-set-up-git/
+# then set up ssh to github
+# http://help.github.com/linux-set-up-git/
+# get settings from the github settings repo
+# (follow the instructions in the README file, readable online)
 
-get settings from the github settings repo
-(follow the instructions in the README file, readable online)
+# set up ssh to webfaction
+# http://docs.webfaction.com/user-guide/access.html
 
-set up ssh to webfaction
-http://docs.webfaction.com/user-guide/access.html
+### PROJECTS
+
+# http://docs.webfaction.com/software/git.html
+git clone chrispsn@chrispsn.webfactional.com:webapps/git/repos/<repo name>.git
+# follow each project's instructions from there...

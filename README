@@ -17,3 +17,6 @@
 # Submodules:
 
     # http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
+
+# Special locations
+# pip.conf goes in ~/.pip
