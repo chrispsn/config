@@ -1,0 +1,7 @@
+# THEMES
+
+FreshDark
+
+Mist
+
+Shiki
