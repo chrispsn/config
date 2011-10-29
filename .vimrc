@@ -14,6 +14,9 @@ map <Leader><Leader> <C-^> "Switches to alternate file
 
 set t_Co=256
 
+" By default, split new buffers below, not above
+set splitbelow
+
 " Autocompletion
 set completeopt=menuone,longest,preview
 " menuone: memu pops up even if only one entry
@@ -21,20 +24,19 @@ set completeopt=menuone,longest,preview
 " preview: puts up a scratchpad displaying docs info for the thing autocompleted
 
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestHighlight = 1 " selects the first entry automatically
 let g:SuperTabLongestEnhanced = 1
 filetype on
 filetype plugin on
+filetype plugin indent on
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 "set wildmode=list:longest,full " A test
 
-" If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
+" closes the scratch (tip) buffer when cursor moves in insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" closes the scratch (tip) buffer when leave insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Syntax highlighting
