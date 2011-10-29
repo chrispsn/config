@@ -9,7 +9,6 @@ set t_Co=256
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 set completeopt=menuone,longest,preview
 set wildmode=list:longest,full " A test
 
@@ -17,7 +16,7 @@ set wildmode=list:longest,full " A test
 syntax on
 let python_highlight_all=1
 colorscheme wombat
-" also excellent: candyman
+" colorscheme candyman
 
 " enable css color highlighting for scss files
 au BufRead,BufNewFile *.scss set filetype=css
