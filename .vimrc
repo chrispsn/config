@@ -5,12 +5,14 @@ call pathogen#helptags()
 set t_Co=256
 
 " Autocompletion
+set completeopt=menuone,longest,preview
+let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-set completeopt=menuone,longest,preview
-set wildmode=list:longest,full " A test
+"set wildmode=list:longest,full " A test
 
 " Syntax highlighting
 syntax on
