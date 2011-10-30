@@ -1,62 +1,21 @@
 runtime bundle/pathogen/autoload/pathogen.vim
+" Above is necessary because pathogen is not installed in the autoload
+" directory
 call pathogen#infect()
 call pathogen#helptags()
 
-""" NOTES
-"" PEP8
-" hit F5 to check python code against PEP8
-" uses the pep8 plugin for vim
-" needs sudo pip install pep8 on the system, though
+" ***** NOTES *****
 
-" Custom bindings
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-map <Leader><Leader> <C-^> "Switches to alternate file
+" DON'T PUT COMMENTS AT THE END OF LINES 
+" THEY MAY NOT BE REGISTERED AS COMMENTS
+" BUT INSTEAD FORM PART OF THE SET OPTION
 
-set t_Co=256
 
-" By default, split new buffers below, not above
-set splitbelow
+" *** BASICS ***
 
-" Autocompletion
-set completeopt=menuone,longest,preview
-" menuone: memu pops up even if only one entry
-" longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
-" preview: puts up a scratchpad displaying docs info for the thing autocompleted
-
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabLongestHighlight = 1 " selects the first entry automatically
-let g:SuperTabLongestEnhanced = 1
+" Autodetect filetypes (for autocompletion etc)
 filetype on
 filetype plugin on
-filetype plugin indent on
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"set wildmode=list:longest,full " A test
-
-" closes the scratch (tip) buffer when cursor moves in insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-" closes the scratch (tip) buffer when leave insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Syntax highlighting
-syntax on
-let python_highlight_all=1
-colorscheme wombat
-" colorscheme candyman
-
-" enable css color highlighting for scss files
-au BufRead,BufNewFile *.scss set filetype=css
-
-" Search highlighting (toggle with F8) (experimental)
-map <F8> :set hls!<CR>
-imap <F8> <ESC>:set hls!<CR>a
-vmap <F8> <ESC>:set hls!<CR>gv
-
-" Make GVim minimal (experimental)
-"set guioptions-=T
-"set guioptions-=m
-"set guioptions-=L
 
 " Filetype indent on
 set autoindent
@@ -70,16 +29,55 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
-" Line numbers
+" *** CUSTOM BINDINGS ***
+
+" Press F5 to check Python code against PEP8
+
+" Toggles NERDTree (Ctrl-D)
+nmap <silent> <C-D> :NERDTreeToggle<CR>
+
+" Switches to alternate window
+map <Leader><Leader> <C-^>
+
+" Toggles line numbers (F2)
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+" Search highlighting (toggle with F8)
+map <F8> :set hls!<CR>
+imap <F8> <ESC>:set hls!<CR>a
+vmap <F8> <ESC>:set hls!<CR>gv
+
+" neocomplpop hotkeys
+" '
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>" 
+smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
+
+" *** COLOURS AND SYNTAX HIGHLIGHTING ***
+
+set t_Co=256
+
+syntax on
+let python_highlight_all=1
+colorscheme wombat
+" colorscheme candyman
+
+" enable css color highlighting for scss files
+au BufRead,BufNewFile *.scss set filetype=css
+
+" *** APPEARANCE ***
+
+" Line numbers are displayed on left
 set number
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR> " Turns off line numbers
 
 " Line highlighting
 set cursorline
-set cursorcolumn
-"" for indent guides plugin
-"let g:indent_guides_enable_on_vim_startup = 1 
-"let g:indent_guides_guide_size = 1
+" cursorcolumn is disabled until the 'preview window popup kills the
+" autocomplete' bug gets fixed
+"set cursorcolumn
+
+" By default, split new buffers below, not above
+set splitbelow
 
 " Bad whitespace highlighting
 highlight BadWhitespace ctermbg=red guibg=red
@@ -87,6 +85,34 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" *** AUTOCOMPLETION ***
+
+set completeopt=menuone,longest,preview
+" menuone: menu pops up even if only one entry
+" longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
+" preview: puts up a scratchpad displaying docs info for the thing autocompleted
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1 
+"set wildmode=list:longest,full
+" closes the scratch (tip) buffer when cursor moves in insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" closes the scratch (tip) buffer when leave insert mode
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" *** GVIM SETTINGS ***
+
+" turn off icons
+set guioptions-=T
+"set guioptions-=m
+"set guioptions-=L
+
+"" for indent guides plugin
+"let g:indent_guides_enable_on_vim_startup = 1 
+"let g:indent_guides_guide_size = 1
+
+" *** FILETYPE-SPECIFIC SETTINGS ***
 
 " Wrap text after a certain number of characters
 au BufRead,BufNewFile *.c,*.h set textwidth=79 " C: 79
