@@ -34,3 +34,8 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# Chris's Additions #
+#####################
+*.6 # compiled go codem
+*.pyc

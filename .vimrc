@@ -2,22 +2,51 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+""" NOTES
+"" PEP8
+" hit F5 to check python code against PEP8
+" uses the pep8 plugin for vim
+" needs sudo pip install pep8 on the system, though
+
+" Custom bindings
+nmap <silent> <C-D> :NERDTreeToggle<CR>
+map <Leader><Leader> <C-^> "Switches to alternate file
+
 set t_Co=256
 
+" By default, split new buffers below, not above
+set splitbelow
+
 " Autocompletion
-" filetype plugin on
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 set completeopt=menuone,longest,preview
-set wildmode=list:longest,full " A test
+" menuone: memu pops up even if only one entry
+" longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
+" preview: puts up a scratchpad displaying docs info for the thing autocompleted
+
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestHighlight = 1 " selects the first entry automatically
+let g:SuperTabLongestEnhanced = 1
+filetype on
+filetype plugin on
+filetype plugin indent on
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"set wildmode=list:longest,full " A test
+
+" closes the scratch (tip) buffer when cursor moves in insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" closes the scratch (tip) buffer when leave insert mode
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Syntax highlighting
 syntax on
 let python_highlight_all=1
 colorscheme wombat
-" also excellent: candyman
+" colorscheme candyman
+
+" enable css color highlighting for scss files
+au BufRead,BufNewFile *.scss set filetype=css
 
 " Search highlighting (toggle with F8) (experimental)
 map <F8> :set hls!<CR>
@@ -79,7 +108,3 @@ au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoption
 " Python: yes
 " C: yes
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
-
-" Custom bindings
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-map <Leader><Leader> <C-^> "Switches to alternate file
