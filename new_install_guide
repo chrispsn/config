@@ -1,8 +1,12 @@
+### NOTE: THIS STILL NEEDS TO BE AUTOMATED ###
+#
 ### ESSENTIALS
 
 ## Utilities
 
 # Install VBoxGuestAdditions
+
+# Basics for editing
 sudo apt-get install vim-gnome #gvim
 sudo apt-get install nautilus-open-terminal # for ubuntu
 
@@ -30,6 +34,13 @@ sudo apt-get install gnome-colors
 #also, you'll need this for stop error messages in the appearance box
 sudo apt-get install gtk2-engines-aurora
 
+# New Wave is on the netbook, and it works pretty well too.
+
+# For netbook...
+sudo apt-get install docky
+# uses HUD theme with intellihide, icon size 52, zoom 200%
+# also ensure it runs on startup/login
+# then remove bottom gnome panel
 
 ### SERVERS
 
