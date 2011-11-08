@@ -1,8 +1,12 @@
+### NOTE: SOME PARTS STILL NEED TO BE AUTOMATED ###
+#
 ### ESSENTIALS
 
 ## Utilities
 
 # Install VBoxGuestAdditions
+
+# Basics for editing
 sudo apt-get install vim-gnome #gvim
 sudo apt-get install nautilus-open-terminal # for ubuntu
 

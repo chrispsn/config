@@ -1,22 +1,8 @@
-# Installation:
+setup.sh is the setup script for symlinks and submodules only. 
+It does not install git, theme stuff or anything else,
+nor does it set up ssh.
 
-    # First, set up ssh using http://help.github.com/linux-set-up-git/
+However, it does contain instructions for those steps.
 
-
-    # Then, get the files...
-    cd ~/
-    git clone git@github.com:chrispsn/config.git
-
-    # Then create symbolic links to the files...
-    ln -s <path to original> <path to new>
-
-    # Finally, initialise and update the submodules...
-    git submodule init
-    git submodule update
-
-# Submodules:
-
-    # http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
-
-# Special locations
-# pip.conf goes in ~/.pip
+new_install_guide will be a bash script which you can use to
+(mostly) automate the setup of a nice setup on new installs.
