@@ -1,4 +1,4 @@
-### NOTE: SOME PARTS STILL NEED TO BE AUTOMATED ###
+### NOTE: THIS STILL NEEDS TO BE AUTOMATED ###
 #
 ### ESSENTIALS
 
@@ -34,6 +34,11 @@ sudo apt-get install gnome-colors
 #also, you'll need this for stop error messages in the appearance box
 sudo apt-get install gtk2-engines-aurora
 
+# For netbook...
+sudo apt-get install docky
+# uses HUD theme with intellihide, icon size 52, zoom 200%
+# also ensure it runs on startup/login
+# then remove bottom gnome panel
 
 ### SERVERS
 
