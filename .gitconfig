@@ -16,4 +16,4 @@
     lt = log --graph --all --abbrev-commit --date=relative -10
 
 [core]
-	excludesfile = /home/chris/.gitignore_global
+	excludesfile = ~/.gitignore_global
