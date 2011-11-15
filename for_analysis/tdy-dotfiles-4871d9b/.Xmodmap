@@ -1,0 +1,3 @@
+!! Map caps to esc
+clear Lock
+keysym Caps_Lock = Escape

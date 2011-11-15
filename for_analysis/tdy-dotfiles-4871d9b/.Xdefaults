@@ -1,0 +1,78 @@
+!
+! <tdy@gmx.com>
+!
+
+
+Xcursor*theme: Vanilla-DMZ-AA
+
+Xft.dpi:       92
+Xft.antialias: true
+Xft.hinting:   true
+Xft.hintstyle: hintfull
+Xft.rgba:      rgb
+
+urxvt*font:            -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+urxvt*boldFont:        -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+urxvt*scrollBar:       false
+urxvt*saveLines:       32767
+urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*perl-ext-common: default,matcher
+urxvt*urlLauncher:     firefox
+urxvt*matcher.button:  1
+urxvt.colorUL:         #a9c9bc
+urxvt*cursorColor:     #9ece9e
+urxvt*cursorBlink:     true
+
+urxvt*title:           rxvt-256color
+urxvt*tintColor:       #aaaaaa
+urxvt*fading:          10
+urxvt*transparent:     true
+
+urxvt*pastableTabs:    true
+urxvt*jumpScroll:      true
+urxvt*secondaryScroll: true
+urxvt*urgentOnBell:    true
+
+xterm*boldMode:     false
+xterm*faceName:     terminus:pixelsize=14
+xterm*scrollBar:    false
+xterm*saveLines:    32767
+xterm*borderLess:   true
+xterm*urlLauncher:  firefox
+xterm*tintColor:    black
+xterm*cursorColor:  orange
+xterm*cursorBlink:  true
+xterm*shading:      20
+xterm*fading:       10
+xterm*pastableTabs: true
+xterm*jumpScroll:   true
+
+alsamixer*scrollBar: false
+
+! Zenburn modded
+*background:  #22211f
+*foreground:  #b5b0ad
+! Black
+*color0:      #131313
+*color8:      #555753
+! Red
+*color1:      #cd7171
+*color9:      #e89393
+! Green
+*color2:      #9ece9e
+*color10:     #c4edc4
+! Yellow
+*color3:      #dfaf8f
+*color11:     #f0dfaf
+! Blue
+*color4:      #6c8b9c
+*color12:     #84a8bc
+! Magenta
+*color5:      #ad7fa8
+*color13:     #dc8cc3
+! Cyan
+*color6:      #8cd0d3
+*color14:     #81eaee
+! White
+*color7:      #bbbbbb
+*color15:     #c6c6c6
