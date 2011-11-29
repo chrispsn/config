@@ -4,12 +4,13 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-"***** NOTES *****
+"*** NOTES ***
 
 "DON'T PUT COMMENTS AT THE END OF LINES 
 "THEY MAY NOT BE REGISTERED AS COMMENTS
 "BUT INSTEAD FORM PART OF THE SET OPTION
-
+"
+"<leader> is \
 
 "*** BASICS ***
 
@@ -36,8 +37,10 @@ set expandtab
 
 "Press F5 to check Python code against PEP8
 "
-"Press <leader>c<space> to toggle comment
-"<leader> being \
+"NERDCommenter
+"Toggle comment based on top selected line's status (<leader>c<space>)
+"Toggle comment based on each line's status (<leader>ci)
+"More: https://github.com/scrooloose/nerdcommenter/blob/master/doc/NERD_commenter.txt
 
 "Toggles NERDTree (Ctrl-D)
 nmap <silent> <C-D> :NERDTreeToggle<CR>
