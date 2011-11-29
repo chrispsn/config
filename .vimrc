@@ -167,6 +167,8 @@ set guioptions-=T
 " Wrap text after a certain number of characters
 au BufRead,BufNewFile *.c,*.h set textwidth=79 " C: 79
 au BufRead,BufNewFile *.py,*.pyw set textwidth=79 " Python: 79
+" Wrap at 72 chars for comments.
+set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 au BufRead,BufNewFile *.hs set textwidth=78 " Haskell: 78
 
 " Turn off settings in 'formatoptions' relating to comment formatting.
