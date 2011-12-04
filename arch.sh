@@ -5,6 +5,7 @@ sudo pacman -S xmonad-contrib
 sudo pacman -S dzen
 sudo pacman -S rxvt-unicode
 sudo pacman -S zsh
+sudo pacman -S vlock
 
 echo "Setting up oh-my-zsh, a zsh prettifier..."
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -25,3 +26,4 @@ echo "Setting up symlinks..."
 ln -s ~/config/.zshrc ~/.zshrc
 ln -s ~/config/.xinitrc ~/xinitrc
 ln -s ~/config/.Xdefaults ~/.Xdefaults
+ln -s ~/config/.zprofile ~/.zprofile
