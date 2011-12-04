@@ -37,6 +37,9 @@ ln -s ~/config/.gitconfig ~/.gitconfig
 rm .gitignore_global
 ln -s ~/config/.gitignore_global ~/.gitignore_global
 
+rm .oh-my-zsh
+ln -s ~/config/.oh-my-zsh ~/.oh-my-zsh
+
 # Special cases
 
 cd ~/.pip
