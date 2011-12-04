@@ -1,0 +1,14 @@
+# For convenience...
+alias pm='python manage.py'
+alias xmedit='vim ~/.xmonad/xmonad.hs' 
+PATH=$PATH:/var/lib/gems/1.8/gems/compass-0.11.5/bin && export PATH
+
+# For avoiding screwups...
+alias rm="rm -i"
+alias mv="mv -i"
+
+# For connecting..
+alias webfaction="ssh chrispsn@chrispsn.webfactional.com"
+#
+# Git alias - shows nice branching structure and latest 10 commits
+alias lt="format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

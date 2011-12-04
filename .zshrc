@@ -66,5 +66,8 @@ rr() {
     done
     cd $dir
 }
-# Git alias - shows nice branching structure and latest 10 commits
-alias lt="format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+
+# Keeping things neat.
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
