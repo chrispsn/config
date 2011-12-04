@@ -1,6 +1,7 @@
 # Packages
 sudo pacman -S gvim
 sudo pacman -S xmonad
+sudo pacman -S xmonad-contrib
 sudo pacman -S dzen
 sudo pacman -S rxvt-unicode
 sudo pacman -S zsh
@@ -12,3 +13,4 @@ chsh -s /bin/zsh
 # Symlinks
 ln -s ~/config/.zshrc ~/.zshrc
 ln -s ~/config/.xinitrc ~/xinitrc
+ln -s ~/config/.Xdefaults ~/.Xdefaults
