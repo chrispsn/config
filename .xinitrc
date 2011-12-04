@@ -1,5 +1,5 @@
 VBoxClient-all &
 
-xmonad
+xsetroot -cursor_name left_ptr
 
-xsetroot -cursor_name left-ptr
+xmonad
