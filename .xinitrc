@@ -1,5 +1,5 @@
-/home/chris/scripts/./start_xmonad.sh
-
 VBoxClient-all &
+
+xmonad
 
 xsetroot -cursor_name left-ptr
