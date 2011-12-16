@@ -39,3 +39,5 @@ Thumbs.db
 #####################
 *.6 # compiled go codem
 *.pyc
+*.swp
+migrations
