@@ -4,5 +4,7 @@ nor does it set up ssh.
 
 However, it does contain instructions for those steps.
 
+arch.sh is an additional install script for Arch Linux installations.
+
 new_install_guide will be a bash script which you can use to
-(mostly) automate the setup of a nice setup on new installs.
+(mostly) automate the setup of a nice setup on new installs for Ubuntu.
