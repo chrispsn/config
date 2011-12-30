@@ -39,8 +39,11 @@ ln -s ~/config/.gitignore_global ~/.gitignore_global
 
 # Special cases
 
-cd ~/.pip
-rm pip.conf
+if [ -d "~/.pip" ]; then
+    rm ~/.pip/pip.conf
+else
+    mkdir .pip
+fi
 ln -s ~/config/pip.conf ~/.pip/pip.conf
 
 # Finally, initialise and update the submodules...

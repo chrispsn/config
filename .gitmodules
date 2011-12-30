@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/pep8"]
 	path = .vim/bundle/pep8
 	url = git://github.com/vim-scripts/pep8.git
-[submodule ".vim/bundle/css-color"]
-	path = .vim/bundle/css-color
-	url = git://github.com/skammer/vim-css-color.git
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
