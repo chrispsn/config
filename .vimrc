@@ -39,7 +39,8 @@ au FileType css setl shiftwidth=2 softtabstop=2
 au FileType scss setl shiftwidth=2 softtabstop=2
 
 " Treat .scss like .css for all purposes, too (inc syntax highlighting)
-au BufRead,BufNewFile *.scss set filetype=css
+" (but note Vim recognises .scss as a separate filetype)
+"au BufRead,BufNewFile *.scss set filetype=css
 
 
 " *** CUSTOM BINDINGS ***
