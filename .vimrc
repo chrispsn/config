@@ -33,6 +33,16 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+" But special for HTML and CSS
+au FileType html setl shiftwidth=2 softtabstop=2
+au FileType css setl shiftwidth=2 softtabstop=2
+au FileType scss setl shiftwidth=2 softtabstop=2
+
+" Treat .scss like .css for all purposes, too (inc syntax highlighting)
+" (but note Vim recognises .scss as a separate filetype)
+"au BufRead,BufNewFile *.scss set filetype=css
+
+
 " *** CUSTOM BINDINGS ***
 
 " Press F5 to check Python code against PEP8
@@ -92,9 +102,6 @@ syntax on
 let python_highlight_all=1
 colorscheme wombat
 " colorscheme candyman
-
-" enable css color highlighting for scss files
-au BufRead,BufNewFile *.scss set filetype=css
 
 " *** APPEARANCE ***
 
