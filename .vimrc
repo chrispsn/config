@@ -24,6 +24,7 @@ set smartindent
 " set foldmethod=indent
 
 " Disable vi compatibility
+" (good in of itself and also for powerline plugin)
 set nocompatible
 
 " Tabs converted to spaces, etc
@@ -193,6 +194,11 @@ au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoption
 " Python: yes
 " C: yes
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+
+" Powerline
+" Always show the statusline
+set laststatus=2
+set encoding=utf-8
 
 " *** OTHER INTERESTING THINGS ***
 " Going between vim registers and X registers
