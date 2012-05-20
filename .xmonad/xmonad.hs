@@ -36,7 +36,7 @@ myBorderWidth   = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask       = mod1Mask
+myModMask       = mod4Mask
  
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -120,7 +120,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
  
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -184,7 +184,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
@@ -247,7 +247,7 @@ myEventHook = mempty
 --
 -- myLogHook = return () -- default; ie no logging takes place
 -- see http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-DynamicLog.html
-myLogHook = dynamicLogWithPP $ dzenPP { 
+myLogHook = dynamicLogWithPP $ byorgeyPP { 
         ppHiddenNoWindows = showNamedWorkspaces 
     }
     where showNamedWorkspaces wsId = if any (`elem` wsId) ['a'..'z']
@@ -274,7 +274,9 @@ myStartupHook = return ()
  
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< dzen defaults
+
+main = do
+    xmonad =<< dzen defaults
  
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

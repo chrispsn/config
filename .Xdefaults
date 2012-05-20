@@ -12,8 +12,8 @@ urxvt*colorBD:           #b4927d
 urxvt*internalBorder:    3
 
 !!! FONTS
-urxvt*font: xft:Tamsyn:pixelsize=17:style=Regular
-urxvt*boldFont: xft:Tamsyn:pixelsize=17:style=Bold
+!urxvt*font: xft:Tamsyn:pixelsize=17:style=Regular
+!urxvt*boldFont: xft:Tamsyn:pixelsize=17:style=Bold
 
 !!! COLOURS
 urxvt*background:           #333333

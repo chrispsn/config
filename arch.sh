@@ -23,9 +23,10 @@ echo "Set up paktahn, an AUR helper. Instructions are in arch.sh; can't run it a
 # sudo pacman -U <paktahn version>.tar.xz
 
 echo "Setting up symlinks..."
-ln -s ~/config/.xinitrc ~/xinitrc
+ln -s ~/config/.xinitrc ~/.xinitrc
 ln -s ~/config/.Xdefaults ~/.Xdefaults
 rm ~/.zshrc # remove this because probs installed when zsh is
 ln -s ~/config/.zshrc ~/.zshrc
 ln -s ~/config/.zprofile ~/.zprofile
 ln -s ~/config/.zsh_aliases ~/.zsh_aliases
+ln -s ~/config/.xmonad ~/.xmonad
