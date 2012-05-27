@@ -55,6 +55,10 @@ setopt MENUCOMPLETE
 
 bindkey -e # Sets zsh to emacs mode (to stop backspace and delete not working)
 
+# This line allow gems installed in ~/.gem to work.
+# That is, it allows gem install x to work without sudo.
+PATH=$PATH:/home/chris/.gem/ruby/1.9.1/bin
+
 # cd to root of current repo; just type 'rr'
 rr() {
     local dir="."
