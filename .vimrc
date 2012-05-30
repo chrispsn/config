@@ -36,6 +36,7 @@ set expandtab
 
 " But special for HTML and CSS
 au FileType html setl shiftwidth=2 softtabstop=2
+au FileType htmldjango setl shiftwidth=2 softtabstop=2
 au FileType css setl shiftwidth=2 softtabstop=2
 au FileType scss setl shiftwidth=2 softtabstop=2
 
