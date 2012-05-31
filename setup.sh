@@ -37,6 +37,9 @@ ln -s ~/config/.gitconfig ~/.gitconfig
 rm .gitignore_global
 ln -s ~/config/.gitignore_global ~/.gitignore_global
 
+rm .conkyrc
+ln -s ~/config/.conkyrc ~/.conkyrc
+
 # Special cases
 
 if [ -d "~/.pip" ]; then
