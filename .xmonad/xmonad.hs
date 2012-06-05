@@ -17,39 +17,34 @@ import qualified Data.Map        as M
 -- Imports for dzen2
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+
+import XMonad.Util.Run(spawnPipe)
  
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
 myTerminal      = "urxvt"
+
+-- Kills conky and dzen2 when xmonad is restarted
+restartCMD = "killall conky dzen2 && xmonad --recompile && xmonad --restart"
  
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
  
 -- Width of the window border in pixels.
---
 myBorderWidth   = 1
  
--- modMask lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
+-- mod1Mask = left alt, mod4Mask = windows key
 myModMask       = mod4Mask
  
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
+-- The number of workspaces is determined by the length
 -- of this list.
+-- e.g. workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
---
-myWorkspaces    = ["web","dev","chat","status"]
+myWorkspaces    = ["1:web","2:dev","3:chat","4:status"]
  
--- Border colors for unfocused and focused windows, respectively.
+-- Colours
 --
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
@@ -126,7 +121,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
  
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm              , xK_q     ), spawn restartCMD)
     ]
     ++
  
@@ -276,6 +271,7 @@ myStartupHook = return ()
 --
 
 main = do
+    spawnPipe "conky | dzen2 -e 'onstart=lower' -x 400 -w 800 -ta r"
     xmonad =<< dzen defaults
  
 -- A structure containing your configuration settings, overriding
