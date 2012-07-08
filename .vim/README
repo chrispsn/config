@@ -17,7 +17,8 @@ Getting latest version: (in .vim directory)
 
 Adding plugins:
 
-    git submodule add <address of plugin on github> ~/config/.vim/bundle/<plugin name>
+# Within the config directory
+    git submodule add <address of plugin on github> .vim/bundle/<plugin name>
     git submodule init
 
 Updating plugins: (in .vim directory)
