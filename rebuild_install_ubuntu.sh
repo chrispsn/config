@@ -35,6 +35,8 @@ sudo apt-get install google-chrome
 
 sudo apt-get install python-pip
 sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+echo "If you're not using setup.sh and the included .bashrc, you'll need to follow the installation instructions at http://virtualenvwrapper.readthedocs.org/en/latest/index.html"
 
 
 # VISUALS

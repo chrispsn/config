@@ -1,10 +1,9 @@
-setup.sh is the setup script for symlinks and submodules only. 
-It does not install git, theme stuff or anything else,
-nor does it set up ssh.
+# setup.sh
+Sets up as much of a generic UNIX config as is possible.
+Intended for use across distributions.
 
-However, it does contain instructions for those steps.
+# rebuild_install_ubuntu.sh
+For Ubuntu only. Sets up specific settings according to my preferences.
 
-arch.sh is an additional install script for Arch Linux installations.
-
-new_install_guide will be a bash script which you can use to
-(mostly) automate the setup of a nice setup on new installs for Ubuntu.
+# rebuild_install_arch.sh
+For Arch Linux only. Sets up specific settings according to my preferences.
