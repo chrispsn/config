@@ -28,6 +28,9 @@ ln -s ~/config/.vimrc ~/.vimrc
 rm -rf .vim
 ln -s ~/config/.vim ~/.vim
 
+rm -rf .bashrc
+ln -s ~/config/.bashrc ~/.bashrc
+
 rm .bash_aliases
 ln -s ~/config/.bash_aliases ~/.bash_aliases
 
