@@ -14,26 +14,3 @@ Adding non-plugin stuff: (in .vim directory)
 Getting latest version: (in .vim directory)
 
     git pull
-
-Adding plugins:
-
-# Within the config directory
-    git submodule add <address of plugin on github> .vim/bundle/<plugin name>
-    git submodule init
-
-Updating plugins: (in .vim directory)
-
-    git submodule update
-
-    or, try:
-    git submodule foreach git pull origin master
-
-Getting rid of plugins:
-
-    http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
-    git rm --cached <path of plugin>, e.g. bundle<plugin name>
-
-Other problems:
-
-    Random appearance of untracked content in submodules:
-    http://www.nils-haldenwang.de/frameworks-and-tools/git/how-to-ignore-changes-in-git-submodules
