@@ -2,6 +2,10 @@
 set nocompatible
 
 " Vundle requirements
+" Install using 
+"     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
+"     :BundleInstall
+"     and :BundleClean to remove
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -15,7 +19,6 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-" Bundle 'vim-scripts/pep8'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
