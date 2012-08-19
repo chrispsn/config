@@ -28,7 +28,7 @@ sudo apt-get install vim-gnome
 sudo apt-get install nautilus-open-terminal 
 
 # Google Chrome
-sudo apt-get install google-chrome
+sudo apt-get install google-chrome-stable
 
 
 # PYTHON
