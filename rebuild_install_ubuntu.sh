@@ -41,7 +41,7 @@ echo "If you're not using setup.sh and the included .bashrc, you'll need to foll
 sudo apt-get install libpq-dev python-dev
 # pep8 is need to make Vim's Python syntax checking work.
 # It can be run as a command line facility too.
-sudo pip install pep8
+sudo pip install flake8
 
 
 # VISUALS

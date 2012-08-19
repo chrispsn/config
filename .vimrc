@@ -1,8 +1,27 @@
-runtime bundle/pathogen/autoload/pathogen.vim
-" Above necessary because pathogen is not installed in the autoload
-" directory
-call pathogen#infect()
-call pathogen#helptags()
+" For general goodness + for powerline, vundle compatibility
+set nocompatible
+
+" Vundle requirements
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundles
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/csapprox'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Shougo/neocomplcache'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+" Bundle 'vim-scripts/pep8'
+Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'gregsexton/MatchTag'
+
+" Syntastic options
+let g:syntastic_auto_loc_list=1
 
 " *** NOTES ***
 
@@ -15,17 +34,12 @@ call pathogen#helptags()
 " *** BASICS ***
 
 " Autodetect filetypes (for autocompletion etc)
-filetype on
 filetype plugin on
 
 " Filetype indent on
 set autoindent
 set smartindent
 " set foldmethod=indent
-
-" Disable vi compatibility
-" (good in of itself and also for powerline plugin)
-set nocompatible
 
 " Tabs converted to spaces, etc
 set tabstop=4
