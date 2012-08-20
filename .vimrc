@@ -5,7 +5,7 @@ set nocompatible
 " Install using 
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
 "     :BundleInstall
-"     and :BundleClean to remove
+"     and :BundleClean to remove vundles removed from this .vimrc
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
