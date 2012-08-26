@@ -24,6 +24,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
+Bundle 'vim-scripts/simple-pairs'
 
 " Syntastic options
 let g:syntastic_auto_loc_list=1
@@ -223,3 +224,8 @@ set encoding=utf-8
 " *** OTHER INTERESTING THINGS ***
 " Going between vim registers and X registers
 " http://www.reddit.com/r/vim/comments/m9tcz/ask_rvim_anyone_successfully_mapped_yankpaste
+"
+" Mouse support
+set ttymouse=xterm2
+" works in any mode (=n means works in normal mode)
+set mouse=a
