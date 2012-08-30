@@ -221,6 +221,18 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 set laststatus=2
 set encoding=utf-8
 
+" Code folding
+" zM: Close all folds
+" zR: Open all folds
+" za: Toggle folding
+
+" How to find lines to fold. Can also be 'manual'
+set foldmethod=indent
+set foldnestmax=10
+" Don't fold by default
+set nofoldenable
+set foldlevel=1
+
 " *** OTHER INTERESTING THINGS ***
 " Going between vim registers and X registers
 " http://www.reddit.com/r/vim/comments/m9tcz/ask_rvim_anyone_successfully_mapped_yankpaste
