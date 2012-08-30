@@ -5,7 +5,7 @@ set nocompatible
 " Install using 
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
 "     :BundleInstall
-"     and :BundleClean to remove
+"     and :BundleClean to remove vundles removed from this .vimrc
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -21,8 +21,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
+Bundle 'vim-scripts/simple-pairs'
 
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
@@ -219,6 +221,23 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 set laststatus=2
 set encoding=utf-8
 
+" Code folding
+" zM: Close all folds
+" zR: Open all folds
+" za: Toggle folding
+
+" How to find lines to fold. Can also be 'manual'
+set foldmethod=indent
+set foldnestmax=10
+" Don't fold by default
+set nofoldenable
+set foldlevel=1
+
 " *** OTHER INTERESTING THINGS ***
 " Going between vim registers and X registers
 " http://www.reddit.com/r/vim/comments/m9tcz/ask_rvim_anyone_successfully_mapped_yankpaste
+"
+" Mouse support
+set ttymouse=xterm2
+" works in any mode (=n means works in normal mode)
+set mouse=a
