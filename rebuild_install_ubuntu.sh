@@ -27,9 +27,6 @@ sudo apt-get install vim-gnome
 # Right-click to open a directory
 sudo apt-get install nautilus-open-terminal 
 
-# Google Chrome
-sudo apt-get install google-chrome-stable
-
 
 # PYTHON
 
@@ -46,11 +43,12 @@ sudo pip install flake8
 
 # VISUALS
 
-echo "gtk2-engines-aurora is to make the FreshDark theme work properly."
-sudo apt-get install gtk2-engines-aurora
-# Gnome-brave contains icons used by FreshDark.
-# sudo apt-get install gnome-brave-icon-theme
-sudo apt-get install shiki-brave-theme
+# Not for Gnome 3...
+# echo "gtk2-engines-aurora is to make the FreshDark theme work properly."
+# sudo apt-get install gtk2-engines-aurora
+# # Gnome-brave contains icons used by FreshDark.
+# # sudo apt-get install gnome-brave-icon-theme
+# sudo apt-get install shiki-brave-theme
 
 # For netbook, consider using docky:
 # sudo apt-get install docky
@@ -62,7 +60,7 @@ clear
 
 # MANUAL STEPS
 echo "Install VirtualBox guest additions"
-echo "Go to http://hcalves.deviantart.com/art/Fresh-Dark-Gnome-Theme-2-1-95737856"
-echo "Download FreshDark and unpack it into .themes, then change the theme in Settings > Appearance"
+# echo "Go to http://hcalves.deviantart.com/art/Fresh-Dark-Gnome-Theme-2-1-95737856"
+# echo "Download FreshDark and unpack it into .themes, then change the theme in Settings > Appearance"
 echo "Webfaction SSH: http://docs.webfaction.com/user-guide/access.html"
 echo "Change the Gnome Terminal theme to white on black, with background transparency about two Close buttons width off maximum"

@@ -57,7 +57,6 @@ mkdir ~/.venvs
 
 # Finally, initialise and update the submodules...
 # http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
-echo "Setting up git submodule stuff..."
-cd ~/config
-git submodule init
-git submodule update
+
+# Set up Vundle for vim
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
