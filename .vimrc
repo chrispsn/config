@@ -17,7 +17,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
@@ -84,9 +83,6 @@ let NERDSpaceDelims=1
 " To get django comments working - see Steve Losh's .vimrc:
 " https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 
-
-" Toggles NERDTree (Ctrl-D)
-nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " Switches to alternate window
 map <Leader><Leader> <C-^>
