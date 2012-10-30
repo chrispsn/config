@@ -34,7 +34,7 @@ sudo apt-get install python-pip
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
 echo "If you're not using setup.sh and the included .bashrc, you'll need to follow the installation instructions at http://virtualenvwrapper.readthedocs.org/en/latest/index.html"
-# Makes pip install of psycopg2 much easier.
+# Makes pip install of psycopg2 much easier. http://stackoverflow.com/questions/5420789/how-to-install-psycopg2-with-pip-on-python
 sudo apt-get install libpq-dev python-dev
 # pep8 is need to make Vim's Python syntax checking work.
 # It can be run as a command line facility too.
