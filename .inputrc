@@ -1,0 +1,4 @@
+# Arrow keys *search* history, rather than
+# scrolling through commands in the order they were entered.
+"\e[B": history-search-forward
+"\e[A": history-search-backward
