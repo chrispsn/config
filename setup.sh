@@ -16,31 +16,29 @@
 
 ### SCRIPT ###
 
-cd ~
-
 # Symbolic links
 # ln -s <path to original> <path to new>
 echo "Removing default files and setting up symlinks to ~/config versions..."
 
-rm .vimrc
+rm ~/.vimrc
 ln -s ~/config/.vimrc ~/.vimrc
 
-rm -rf .vim
+rm -rf ~/.vim
 ln -s ~/config/.vim ~/.vim
 
-rm -rf .bashrc
+rm -rf ~/.bashrc
 ln -s ~/config/.bashrc ~/.bashrc
 
-rm .bash_aliases
+rm ~/.bash_aliases
 ln -s ~/config/.bash_aliases ~/.bash_aliases
 
-rm .gitconfig
+rm ~/.gitconfig
 ln -s ~/config/.gitconfig ~/.gitconfig
 
-rm .gitignore_global
+rm ~/.gitignore_global
 ln -s ~/config/.gitignore_global ~/.gitignore_global
 
-rm .conkyrc
+rm ~/.conkyrc
 ln -s ~/config/.conkyrc ~/.conkyrc
 
 # Special cases
@@ -48,7 +46,7 @@ ln -s ~/config/.conkyrc ~/.conkyrc
 if [ -d "~/.pip" ]; then
     rm ~/.pip/pip.conf
 else
-    mkdir .pip
+    mkdir ~/.pip
 fi
 ln -s ~/config/pip.conf ~/.pip/pip.conf
 
