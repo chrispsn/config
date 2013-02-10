@@ -108,7 +108,8 @@ alias ls='ls --color=auto'
 # export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
 # For virtualenvwrapper
-export WORKON_HOME=~/.venvs
+export WORKON_HOME=$HOME/.venvs
+export PROJECT_HOME=$HOME/code
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
