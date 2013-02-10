@@ -1,0 +1,10 @@
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/.venvs
+export PROJECT_HOME=$HOME/code
+source /usr/bin/virtualenvwrapper.sh
+# These two lines make pip auto-install to the virtualenv
+# without needing to specify an option for vim
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+# Automatically collect and run doctests with nosetests
+export NOSE_WITH_DOCTEST=true
