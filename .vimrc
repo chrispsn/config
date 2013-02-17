@@ -6,6 +6,12 @@ set nocompatible
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
 "     :BundleInstall
 "     and :BundleClean to remove vundles removed from this .vimrc
+"
+" Installing YouCompleteMe
+"   :BundleInstall
+"   cd ~/.vim/bundle/YouCompleteMe`
+"   ./install.sh
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -15,14 +21,13 @@ Bundle 'gmarik/vundle'
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
+Bundle 'Valloric/YouCompleteMe'
 " Bundle 'vim-scripts/simple-pairs'
 
 " Syntastic options
@@ -69,8 +74,6 @@ au FileType scss setl shiftwidth=2 softtabstop=2
 
 " *** CUSTOM BINDINGS ***
 
-" Press F5 to check Python code against PEP8
-
 " NERDCommenter
 " Toggle comment based on top selected line's status (<leader>c<space>)
 " Toggle comment based on each line's status (<leader>ci)
@@ -102,11 +105,6 @@ vmap <F8> <ESC>:set hls!<CR>gv
 " Caused problems last time - many keys entered insert mode
 " nnoremap <ESC> :noh<return><ESC>
 
-" neocomplpop hotkeys
-" imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>" 
-" smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
-
 " remap F1 to escape
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -136,7 +134,7 @@ set number
 set cursorline
 " cursorcolumn is disabled until the 'preview window popup kills the
 " autocomplete' bug gets fixed
-" set cursorcolumn
+set cursorcolumn
 
 " By default, split new buffers below, not above
 set splitbelow
@@ -164,9 +162,6 @@ set completeopt=menuone,longest,preview
 " longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
 " preview: puts up a scratchpad displaying docs info for the thing autocompleted
 
-" let g:neocomplcache_enable_at_startup = 1
-" let g:neocomplcache_enable_auto_select = 1 
-" set wildmode=list:longest,full
 " closes the scratch (tip) buffer when cursor moves in insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " closes the scratch (tip) buffer when leave insert mode
