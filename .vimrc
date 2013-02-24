@@ -30,6 +30,7 @@ if !isdirectory(expand(root, 1).'/vundle')
 endif
 
 Bundle 'gmarik/vundle'
+" Makes GVim colourschemes work in terminal Vim
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -39,6 +40,11 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
 Bundle 'Valloric/YouCompleteMe'
+" Testing
+Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/hexHighlight.vim'
+Bundle 'davidhalter/jedi-vim'
+" Disabled
 " Bundle 'vim-scripts/simple-pairs'
 
 " Syntastic options
