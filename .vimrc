@@ -2,8 +2,10 @@
 set nocompatible
 
 " Vundle requirements
-" Install using 
+" Install using
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
+"     (although the above may not be necessary given the bootstrap
+"     script below)
 "     :BundleInstall
 "     and :BundleClean to remove vundles removed from this .vimrc
 "
@@ -17,10 +19,19 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Vundles
+
+" Bootstrap vundle installation:
+" https://github.com/gmarik/vundle/blob/master/test/vimrc
+let root = '/tmp/!vundle-test/bundles/'
+let src = 'http://github.com/gmarik/vundle.git'
+
+if !isdirectory(expand(root, 1).'/vundle')
+  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+endif
+
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
@@ -90,20 +101,28 @@ let NERDSpaceDelims=1
 " https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 
 
+" Make j and k move up and down one line on the _screen_,
+" instead of one line in the code.
+:nmap j gj
+:nmap k gk
+
 " Switches to alternate window
 map <Leader><Leader> <C-^>
+
+" Use CtrlP to search through open buffers (F9, ie quickload)
+map <F9> :CtrlPBuffer<CR>
 
 " Toggles line numbers (F2)
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
-" Toggle search highlighting (F8)
-map <F8> :set hls!<CR>
-imap <F8> <ESC>:set hls!<CR>a
-vmap <F8> <ESC>:set hls!<CR>gv
+" " Toggle search highlighting (F8)
+" map <F8> :set hls!<CR>
+" imap <F8> <ESC>:set hls!<CR>a
+" vmap <F8> <ESC>:set hls!<CR>gv
 
-" Clear search highlights using ESC
+" Clear search highlights using F8
 " Caused problems last time - many keys entered insert mode
-" nnoremap <ESC> :noh<return><ESC>
+nnoremap <F8> :noh<return><ESC>
 
 " remap F1 to escape
 inoremap <F1> <ESC>
@@ -180,10 +199,6 @@ set gdefault
 set guioptions-=T
 " set guioptions-=m
 " set guioptions-=L
-
-" for indent guides plugin
-" let g:indent_guides_enable_on_vim_startup = 1 
-" let g:indent_guides_guide_size = 1
 
 " *** FILETYPE-SPECIFIC SETTINGS ***
 
