@@ -2,27 +2,49 @@
 set nocompatible
 
 " Vundle requirements
-" Install using 
+" Install using
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
+"     (although the above may not be necessary given the bootstrap
+"     script below)
 "     :BundleInstall
 "     and :BundleClean to remove vundles removed from this .vimrc
+"
+" Installing YouCompleteMe
+"   :BundleInstall
+"   cd ~/.vim/bundle/YouCompleteMe`
+"   ./install.sh
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Vundles
+
+" Bootstrap vundle installation:
+" https://github.com/gmarik/vundle/blob/master/test/vimrc
+let root = '/tmp/!vundle-test/bundles/'
+let src = 'http://github.com/gmarik/vundle.git'
+
+if !isdirectory(expand(root, 1).'/vundle')
+  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+endif
+
 Bundle 'gmarik/vundle'
+" Makes GVim colourschemes work in terminal Vim
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
+Bundle 'Valloric/YouCompleteMe'
+" Testing
+Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/hexHighlight.vim'
+Bundle 'davidhalter/jedi-vim'
+" Disabled
 " Bundle 'vim-scripts/simple-pairs'
 
 " Syntastic options
@@ -69,8 +91,6 @@ au FileType scss setl shiftwidth=2 softtabstop=2
 
 " *** CUSTOM BINDINGS ***
 
-" Press F5 to check Python code against PEP8
-
 " NERDCommenter
 " Toggle comment based on top selected line's status (<leader>c<space>)
 " Toggle comment based on each line's status (<leader>ci)
@@ -87,25 +107,28 @@ let NERDSpaceDelims=1
 " https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 
 
+" Make j and k move up and down one line on the _screen_,
+" instead of one line in the code.
+:nmap j gj
+:nmap k gk
+
 " Switches to alternate window
 map <Leader><Leader> <C-^>
+
+" Use CtrlP to search through open buffers (F9, ie quickload)
+map <F9> :CtrlPBuffer<CR>
 
 " Toggles line numbers (F2)
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
-" Toggle search highlighting (F8)
-map <F8> :set hls!<CR>
-imap <F8> <ESC>:set hls!<CR>a
-vmap <F8> <ESC>:set hls!<CR>gv
+" " Toggle search highlighting (F8)
+" map <F8> :set hls!<CR>
+" imap <F8> <ESC>:set hls!<CR>a
+" vmap <F8> <ESC>:set hls!<CR>gv
 
-" Clear search highlights using ESC
+" Clear search highlights using F8
 " Caused problems last time - many keys entered insert mode
-" nnoremap <ESC> :noh<return><ESC>
-
-" neocomplpop hotkeys
-" imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>" 
-" smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
+nnoremap <F8> :noh<return><ESC>
 
 " remap F1 to escape
 inoremap <F1> <ESC>
@@ -136,7 +159,7 @@ set number
 set cursorline
 " cursorcolumn is disabled until the 'preview window popup kills the
 " autocomplete' bug gets fixed
-" set cursorcolumn
+set cursorcolumn
 
 " By default, split new buffers below, not above
 set splitbelow
@@ -164,9 +187,6 @@ set completeopt=menuone,longest,preview
 " longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
 " preview: puts up a scratchpad displaying docs info for the thing autocompleted
 
-" let g:neocomplcache_enable_at_startup = 1
-" let g:neocomplcache_enable_auto_select = 1 
-" set wildmode=list:longest,full
 " closes the scratch (tip) buffer when cursor moves in insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " closes the scratch (tip) buffer when leave insert mode
@@ -185,10 +205,6 @@ set gdefault
 set guioptions-=T
 " set guioptions-=m
 " set guioptions-=L
-
-" for indent guides plugin
-" let g:indent_guides_enable_on_vim_startup = 1 
-" let g:indent_guides_guide_size = 1
 
 " *** FILETYPE-SPECIFIC SETTINGS ***
 
