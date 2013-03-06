@@ -14,11 +14,14 @@ urxvt*internalBorder:    3
 !!! FONTS
 !urxvt*font: xft:Tamsyn:pixelsize=17:style=Regular
 !urxvt*boldFont: xft:Tamsyn:pixelsize=17:style=Bold
+!
 ! default:
 ! URxvt.font: fixed
 ! aka...
 ! URxvt.font: 6x13
 ! URxvt.boldFont: 6x13bold
+
+! slighly bigger
 URxvt.font: 7x13
 URxvt.boldFont: 7x13bold
 
