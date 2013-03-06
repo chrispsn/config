@@ -1,6 +1,3 @@
-" For general goodness + for powerline, vundle compatibility
-set nocompatible
-
 " Vundle requirements
 " Install using
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
