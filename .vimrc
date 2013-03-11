@@ -1,6 +1,3 @@
-" For general goodness + for powerline, vundle compatibility
-set nocompatible
-
 " Vundle requirements
 " Install using
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
@@ -22,12 +19,12 @@ call vundle#rc()
 
 " Bootstrap vundle installation:
 " https://github.com/gmarik/vundle/blob/master/test/vimrc
-let root = '/tmp/!vundle-test/bundles/'
-let src = 'http://github.com/gmarik/vundle.git'
+" let root = '/tmp/!vundle-test/bundles/'
+" let src = 'http://github.com/gmarik/vundle.git'
 
-if !isdirectory(expand(root, 1).'/vundle')
-  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
-endif
+" if !isdirectory(expand(root, 1).'/vundle')
+  " exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+" endif
 
 Bundle 'gmarik/vundle'
 " Makes GVim colourschemes work in terminal Vim

@@ -1,7 +1,13 @@
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/code
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # These two lines make pip auto-install to the virtualenv
 # without needing to specify an option for vim
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
