@@ -50,6 +50,12 @@ Bundle 'davidhalter/jedi-vim'
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
 
+" Formatting of git-gutter
+" Same colur as text background
+au VimEnter * hi! clear SignColumn
+" Same colour as linenumbers
+" au VimEnter * hi! link SignColumn LineNr
+
 " *** NOTES ***
 
 " DON'T PUT COMMENTS AT THE END OF LINES 
