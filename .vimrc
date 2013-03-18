@@ -254,7 +254,7 @@ map <leader>t :call RunTests()<cr>
 function! RunTests()
     " Run test infrastructure.
     if filereadable("tests.py")
-        exec ":!nosetests tests.py"
+        exec ":!clear; nosetests tests.py"
     " else
         " exec ":!echo 'No tests available!'"
     end
