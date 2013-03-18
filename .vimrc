@@ -245,6 +245,21 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
+" TEST RUNNING
+" adapted from Gary Bernhardt's config 
+" as displayed in Destroy All Software #60
+
+map <leader>t :call RunTests()<cr>
+
+function! RunTests()
+    " Run test infrastructure.
+    if filereadable("tests.py")
+        exec ":!nosetests tests.py"
+    " else
+        " exec ":!echo 'No tests available!'"
+    end
+endfunction
+
 " *** OTHER INTERESTING THINGS ***
 " Going between vim registers and X registers
 " http://www.reddit.com/r/vim/comments/m9tcz/ask_rvim_anyone_successfully_mapped_yankpaste
