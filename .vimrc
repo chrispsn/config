@@ -141,8 +141,9 @@ set t_Co=256
 
 syntax on
 let python_highlight_all=1
-colorscheme wombat
+" colorscheme wombat
 " colorscheme candyman
+colorscheme newspaper
 
 " *** APPEARANCE ***
 
