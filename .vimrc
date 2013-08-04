@@ -47,6 +47,13 @@ Bundle 'davidhalter/jedi-vim'
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
 
+" Auto git-gutter: http://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
+" Formatting of git-gutter
+" Same colur as text background
+au VimEnter * hi! clear SignColumn
+" Same colour as linenumbers
+" au VimEnter * hi! link SignColumn LineNr
+
 " *** NOTES ***
 
 " DON'T PUT COMMENTS AT THE END OF LINES 
