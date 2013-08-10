@@ -7,3 +7,4 @@ alias mv="mv -i"
 
 # for connecting..
 alias webfaction="ssh chrispsn@chrispsn.webfactional.com"
+alias droplet="ssh chrispsn@192.241.229.227"

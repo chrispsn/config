@@ -76,3 +76,7 @@ rr() {
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+if [ -f ~/config/python_helpers ]; then
+    . ~/config/python_helpers
+fi
