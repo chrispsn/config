@@ -37,12 +37,13 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'gorodinskiy/vim-coloresque'
 " Testing
 Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/hexHighlight.vim'
-Bundle 'davidhalter/jedi-vim'
 " Disabled
 " Bundle 'vim-scripts/simple-pairs'
+" Bundle 'davidhalter/jedi-vim'
 
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
