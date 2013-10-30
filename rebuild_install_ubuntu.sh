@@ -21,7 +21,6 @@
 
 # APPS & UTILITIES
 
-# GVim
 sudo apt-get install vim-gnome
 
 # Right-click to open a directory
@@ -50,11 +49,6 @@ sudo pip install flake8
 # # sudo apt-get install gnome-brave-icon-theme
 # sudo apt-get install shiki-brave-theme
 
-# For netbook, consider using docky:
-# sudo apt-get install docky
-# Use the HUD theme with intellihide, icon size 52, zoom 200%
-# Also ensure it runs on startup/login
-# And remove the bottom Gnome panel
 
 clear
 

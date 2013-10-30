@@ -51,8 +51,8 @@ fi
 ln -s ~/config/pip.conf ~/.pip/pip.conf
 
 # Virtualenvwrapper setup
-mkdir ~/.venvs
-sudo pip install virtualenvwrapper
+# mkdir ~/.venvs
+# sudo pip install virtualenvwrapper
 
 # Finally, initialise and update the submodules...
 # http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/
