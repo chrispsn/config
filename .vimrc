@@ -40,7 +40,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'gorodinskiy/vim-coloresque'
 " Testing
 Bundle 'airblade/vim-gitgutter'
