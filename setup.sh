@@ -41,6 +41,9 @@ ln -s ~/config/.gitignore_global ~/.gitignore_global
 rm ~/.conkyrc
 ln -s ~/config/.conkyrc ~/.conkyrc
 
+rm ~/.valgrindrc
+ln -s ~/config/.valgrindrc ~/.valgrindrc
+
 # Special cases
 
 if [ -d "~/.pip" ]; then
