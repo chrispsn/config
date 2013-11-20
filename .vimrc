@@ -32,22 +32,21 @@ Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'Valloric/YouCompleteMe'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
 Bundle 'gorodinskiy/vim-coloresque'
-" Testing
 Bundle 'airblade/vim-gitgutter'
-Bundle 'vim-scripts/hexHighlight.vim'
+
 " Disabled
+" Bundle 'tpope/vim-surround'       " convenience with (), tags etc
 " Bundle 'vim-scripts/simple-pairs'
 " Bundle 'davidhalter/jedi-vim'
-
+" Bundle 'Shougo/neocomplcache'
+" Bundle 'Shougo/neocomplcache-snippets-complete'
+"
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
 
@@ -265,11 +264,11 @@ map <leader>t :call RunTests()<cr>
 
 function! RunTests()
     " Run test infrastructure.
-    if filereadable("tests.py")
-        exec ":!clear; nosetests tests.py"
+    " if filereadable("test_*.py")
+    exec ":!clear; nosetests"
     " else
         " exec ":!echo 'No tests available!'"
-    end
+    " end
 endfunction
 
 " *** OTHER INTERESTING THINGS ***
