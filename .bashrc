@@ -110,3 +110,9 @@ alias ls='ls --color=auto'
 if [ -f ~/config/python_helpers ]; then
     . ~/config/python_helpers
 fi
+
+set completion-prefix-display-length 2
+
+# tab only takes one hit to trigger autocomplete
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
