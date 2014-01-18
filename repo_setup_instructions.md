@@ -6,7 +6,8 @@ This is how to set up my typical local dev environment (Ubuntu 12.04).
 
 ## Virtualenv
 
-Inside the project directory... 
+Inside the project directory...
+
     mkvirtualenv <project name> -p $(which python3.x)
     setvirtualenvproject $VIRTUAL_ENV $(pwd)
     add2virtualenv $(pwd)
@@ -66,7 +67,6 @@ To install it:
 To use it, run `compass watch` in the static directory.
 
 # Submodules
-==========
 
 After cloning this project, ensure you can get access to upstream changes in the submodules (which have been forked). Follow these instructions:
 
