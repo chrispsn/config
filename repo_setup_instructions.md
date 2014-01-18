@@ -20,6 +20,10 @@ this in the `postactivate` file of the venv:
     export DJANGO_SETTINGS_MODULE=project.settings.local
 
     (of course this is project.settings.production for prod)
+    
+This will do it:
+
+    echo 'export DJANGO_SETTINGS_MODULE=project.settings.local' >> ~/.venvs/<project name>/bin/postactivate
 
 ### Database
 
