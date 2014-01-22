@@ -42,6 +42,10 @@ Get out of psql and run this from the command line...
 
 You will need to specify this database name, as well as the username and password you just set, in your local settings file.
 
+## uWSGI
+
+Try installing uWSGI into the virtualenv via pip, instead of using the version that comes with the OS.
+
 # HTML5 Boilerplate
 
 In templates:
