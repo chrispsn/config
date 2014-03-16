@@ -1,3 +1,6 @@
+" <leader> is \
+" DON'T PUT COMMENTS AT THE END OF LINES - doesn't always work
+
 " Vundle requirements
 " Install using
 "     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
@@ -5,11 +8,6 @@
 "     script below)
 "     :BundleInstall
 "     and :BundleClean to remove vundles removed from this .vimrc
-"
-" Installing YouCompleteMe
-"   :BundleInstall
-"   cd ~/.vim/bundle/YouCompleteMe`
-"   ./install.sh
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -27,43 +25,30 @@ call vundle#rc()
 " endif
 
 Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-surround'
+" highlight matching html tag when cursor is on it
+Bundle 'gregsexton/MatchTag'
+" css/less/sass/html color preview for vim
+Bundle 'gorodinskiy/vim-coloresque'
 " Makes GVim colourschemes work in terminal Vim
 Bundle 'godlygeek/csapprox'
-Bundle 'kien/ctrlp.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdcommenter'
+" syntax checking for lots of languages
 Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'gregsexton/MatchTag'
-Bundle 'gorodinskiy/vim-coloresque'
-Bundle 'airblade/vim-gitgutter'
 
-" Disabled
-" Bundle 'tpope/vim-surround'       " convenience with (), tags etc
-" Bundle 'vim-scripts/simple-pairs'
-" Bundle 'davidhalter/jedi-vim'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neocomplcache-snippets-complete'
-"
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
 
 " Auto git-gutter: http://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
 " Formatting of git-gutter
-" Same colur as text background
+" Same colour as text background
 au VimEnter * hi! clear SignColumn
 " Same colour as linenumbers
 " au VimEnter * hi! link SignColumn LineNr
 
-" *** NOTES ***
-
-" DON'T PUT COMMENTS AT THE END OF LINES 
-" THEY MAY NOT BE REGISTERED AS COMMENTS
-" BUT INSTEAD FORM PART OF THE SET OPTION
-
-" <leader> is \
 
 " *** BASICS ***
 
@@ -86,14 +71,7 @@ set expandtab
 set winwidth=79
 
 " But special for HTML and CSS
-au FileType html setl shiftwidth=2 softtabstop=2
-au FileType htmldjango setl shiftwidth=2 softtabstop=2
-au FileType css setl shiftwidth=2 softtabstop=2
-au FileType scss setl shiftwidth=2 softtabstop=2
-
-" Treat .scss like .css for all purposes, too (inc syntax highlighting)
-" (but note Vim recognises .scss as a separate filetype)
-"au BufRead,BufNewFile *.scss set filetype=css
+au FileType html, htmldjango, css, scss setl shiftwidth=2 softtabstop=2
 
 
 " *** CUSTOM BINDINGS ***
@@ -101,9 +79,8 @@ au FileType scss setl shiftwidth=2 softtabstop=2
 " NERDCommenter
 " Toggle comment based on top selected line's status (<leader>c<space>)
 " Toggle comment based on each line's status (<leader>ci)
-" Comment sexily (<leader>cs)
-" Undo comment (<leader>cu)
-" More: https://github.com/scrooloose/nerdcommenter/blob/master/doc/NERD_commenter.txt
+" Comment sexily (<leader>cs); undo comment (<leader>cu)
+"
 " Compact sexy comments
 let NERDCompactSexyComs=1
 " Remove extra spaces from sexy comments when uncommenting
@@ -113,20 +90,13 @@ let NERDSpaceDelims=1
 " To get django comments working - see Steve Losh's .vimrc:
 " https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 
-
 " Make j and k move up and down one line on the _screen_,
 " instead of one line in the code.
 :nmap j gj
 :nmap k gk
 
-" Switches to alternate window
-map <Leader><Leader> <C-^>
-
 " Use CtrlP to search through open buffers (F9, ie quickload)
 map <F9> :CtrlPBuffer<CR>
-
-" Toggles line numbers (F2)
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " " Toggle search highlighting (F8)
 " map <F8> :set hls!<CR>
@@ -136,14 +106,6 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 " Clear search highlights using F8
 " Caused problems last time - many keys entered insert mode
 nnoremap <F8> :noh<return><ESC>
-
-" remap F1 to escape
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" fold html tags
-nnoremap <leader>ft Vatzf
 
 " *** COLOURS AND SYNTAX HIGHLIGHTING ***
 
@@ -159,15 +121,9 @@ colorscheme newspaper
 
 " Line numbers are displayed on left
 set number
-" But make them relative, since actual line number is displayed
-" at bottom of window
-" set relativenumber
 
 " Line highlighting
 set cursorline
-" cursorcolumn is disabled until the 'preview window popup kills the
-" autocomplete' bug gets fixed
-set cursorcolumn
 
 " By default, split new buffers below, not above
 set splitbelow
@@ -184,43 +140,16 @@ set incsearch
 set showmatch
 set hlsearch
 
-" TextMate-like display of invisible characters
-" set list
-" set listchars=tab:▸\ ,eol:¬
-
-" *** AUTOCOMPLETION ***
-
-set completeopt=menuone,longest,preview
-" menuone: menu pops up even if only one entry
-" longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
-" preview: puts up a scratchpad displaying docs info for the thing autocompleted
-
-" closes the scratch (tip) buffer when cursor moves in insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-" closes the scratch (tip) buffer when leave insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" *** FUNCTIONAL SETTINGS ***
-
 " without this, need to type :s/foo/bar/g
 " instead of :s/foo/bar to get replacement of more than
 " the first occurance of foo on a line
 set gdefault
-
-" *** GVIM SETTINGS ***
-
-" turn off icons
-set guioptions-=T
-" set guioptions-=m
-" set guioptions-=L
 
 " *** FILETYPE-SPECIFIC SETTINGS ***
 
 " Wrap text after a certain number of characters
 au BufRead,BufNewFile *.c,*.h set textwidth=79 " C: 79
 au BufRead,BufNewFile *.py,*.pyw set textwidth=79 " Python: 79
-" Wrap at 72 chars for comments.
-set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 au BufRead,BufNewFile *.hs set textwidth=78 " Haskell: 78
 
 " Turn off settings in 'formatoptions' relating to comment formatting.
@@ -232,29 +161,18 @@ au BufRead,BufNewFile *.hs set textwidth=78 " Haskell: 78
 " C: prevents insertion of '*' at the beginning of every line in a comment
 au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
 
-" Use UNIX (\n) line endings.
-" Only used for new files so as to not force existing files to change their
-" line endings.
+" Use UNIX (\n) line endings for new files.
 " Python: yes
 " C: yes
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
-" Powerline
 " Always show the statusline
 set laststatus=2
 set encoding=utf-8
 
-" Code folding
-" zM: Close all folds
-" zR: Open all folds
-" za: Toggle folding
-
-" How to find lines to fold. Can also be 'manual'
-set foldmethod=indent
-set foldnestmax=10
 " Don't fold by default
 set nofoldenable
-set foldlevel=1
+" set foldlevel=1
 
 " TEST RUNNING
 " adapted from Gary Bernhardt's config 
@@ -286,10 +204,6 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" Highlight background of text >80char in red
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
-"alt:
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn=join(range(81,999),",")
+" *** GVIM SETTINGS ***
+" turn off icons
+set guioptions-=T

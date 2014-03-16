@@ -1,0 +1,16 @@
+" *** AUTOCOMPLETION ***
+
+set completeopt=menuone,longest,preview
+" menuone: menu pops up even if only one entry
+" longest: inserts the longest common match, e.g. for Foo and Foz is 'Fo'
+" preview: puts up a scratchpad displaying docs info for the thing autocompleted
+
+" closes the scratch (tip) buffer when cursor moves in insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" closes the scratch (tip) buffer when leave insert mode
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" TextMate-like display of invisible characters
+" set list
+" set listchars=tab:▸\ ,eol:¬
+
