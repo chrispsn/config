@@ -1,43 +1,34 @@
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Vundle commands: :BundleInstall and :BundleClean
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+" Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
+" highlight matching html tag when cursor is on it
+Plugin 'gregsexton/MatchTag'
+" css/less/sass/html color preview for vim
+Plugin 'gorodinskiy/vim-coloresque'
+" Makes GVim colourschemes work in terminal Vim
+" Plugin 'godlygeek/csapprox'
+" syntax checking for lots of languages
+Plugin 'scrooloose/syntastic'
+" Plugin 'vim-scripts/newspaper.vim'
+
+call vundle#end()
+filetype plugin indent on
+" END Vundle
+
 " <leader> is \
 " DON'T PUT COMMENTS AT THE END OF LINES - doesn't always work
 
-" Vundle requirements
-" Install using
-"     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle)
-"     (although the above may not be necessary given the bootstrap
-"     script below)
-"     :BundleInstall
-"     and :BundleClean to remove vundles removed from this .vimrc
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Vundles
-
-" Bootstrap vundle installation:
-" https://github.com/gmarik/vundle/blob/master/test/vimrc
-" let root = '/tmp/!vundle-test/bundles/'
-" let src = 'http://github.com/gmarik/vundle.git'
-
-" if !isdirectory(expand(root, 1).'/vundle')
-  " exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
-" endif
-
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-surround'
-" highlight matching html tag when cursor is on it
-Bundle 'gregsexton/MatchTag'
-" css/less/sass/html color preview for vim
-Bundle 'gorodinskiy/vim-coloresque'
-" Makes GVim colourschemes work in terminal Vim
-Bundle 'godlygeek/csapprox'
-" syntax checking for lots of languages
-Bundle 'scrooloose/syntastic'
 
 " Syntastic options
 " let g:syntastic_auto_loc_list=1
@@ -115,7 +106,7 @@ syntax on
 let python_highlight_all=1
 " colorscheme wombat
 " colorscheme candyman
-colorscheme newspaper
+" colorscheme newspaper
 
 " *** APPEARANCE ***
 
