@@ -1,3 +1,7 @@
+" Autodetect filetypes (for autocompletion etc)
+" filetype plugin indent on
+
+
 " *** AUTOCOMPLETION ***
 
 set completeopt=menuone,longest,preview
@@ -13,4 +17,53 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " TextMate-like display of invisible characters
 " set list
 " set listchars=tab:▸\ ,eol:¬
+
+" Vundle
+" Makes GVim colourschemes work in terminal Vim
+Plugin 'godlygeek/csapprox'
+Plugin 'vim-scripts/newspaper.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
+"
+" colorscheme candyman
+" colorscheme newspaper
+
+Plugin 'vim-scripts/Wombat'
+" colorscheme wombat
+
+" Toggle search highlighting (F8)
+map <F8> :set hls!<CR>
+imap <F8> <ESC>:set hls!<CR>a
+vmap <F8> <ESC>:set hls!<CR>gv
+
+let python_highlight_all=1
+
+
+" TEST RUNNING
+" adapted from Gary Bernhardt's config 
+" as displayed in Destroy All Software #60
+
+map <leader>t :call RunTests()<cr>
+
+function! RunTests()
+    " Run test infrastructure.
+    " if filereadable("test_*.py")
+    exec ":!clear; nosetests"
+    " else
+        " exec ":!echo 'No tests available!'"
+    " end
+endfunction
+
+
+" set foldlevel=1
+
+
+
+" Auto git-gutter: http://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
+" Formatting of git-gutter
+" Same colour as text background
+au VimEnter * hi! clear SignColumn
+" Same colour as linenumbers
+" au VimEnter * hi! link SignColumn LineNr
+
 
